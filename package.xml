@@ -3,7 +3,7 @@
 <package format="3">
   <name>montemorency</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Process ROS2 pointcloud data with trees.</description>
   <maintainer email="alex.m.ernst14@gmail.com">alex</maintainer>
   <license>TODO</license>
 

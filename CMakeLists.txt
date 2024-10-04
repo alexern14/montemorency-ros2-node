@@ -23,7 +23,6 @@ target_include_directories(montemorency_pcl PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
     ${geometry_msgs_INCLUDE_DIRS}
     ${nav_msgs_INCLUDE_DIRS}
-    ${luci_messages_INCLUDE_DIRS}
     ${tf2_ros_INCLUDE_DIRS}
     ${PCL_INCLUDE_DIRS}
     ${sensor_msgs_INCLUDE_DIRS}
@@ -34,7 +33,6 @@ target_link_libraries(montemorency_pcl PUBLIC
   rclcpp::rclcpp 
   ${nav_msgs_LIBRARIES}
   ${geometry_msgs_LIBRARIES}
-  ${luci_messages_LIBRARIES}
   ${tf2_ros_LIBRARIES}
   ${PCL_LIBRARIES}
   ${pcl_conversions_LIBRARIES}

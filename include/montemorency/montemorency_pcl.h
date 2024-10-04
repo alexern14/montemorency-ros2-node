@@ -6,7 +6,8 @@
  * @brief
  *
  */
-class Montemorency_Trees : public rclcpp::Node {
+class Montemorency_Trees : public rclcpp::Node
+{
 public:
   /**
    * @brief A constructor for Montemorency_Trees class
@@ -19,7 +20,7 @@ public:
    * @brief Destroy the Montemorency_Trees object
    *
    */
-  ~Montemorency_Trees(){};
+  ~Montemorency_Trees() {};
 
 protected:
   /**
@@ -29,19 +30,19 @@ protected:
    */
   void topic_callback(const sensor_msgs::msg::PointCloud2::SharedPtr msg);
 
-  // ROS2 subscriber and related topic name
+  /// ROS2 subscriber and related topic name
   rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr subscription_;
   std::string param_topic_pointcloud_in;
 
-  // ROS2 publisher and related topic name
+  /// ROS2 publisher and related topic name
   rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr publisher_;
   std::string param_topic_pointcloud_out;
 
-  // ROS2 publisher and related topic name
+  /// ROS2 publisher and related topic name
   rclcpp::Publisher<std_msgs::msg::Int8>::SharedPtr tree_count_publisher;
   std::string param_tree_count;
 
-  // ROS2 publisher and related topic name
+  /// ROS2 publisher and related topic name
   rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr
       publisherFiltered_;
   std::string param_topic_pointcloud_filtered_out;

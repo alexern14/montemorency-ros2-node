@@ -1,0 +1,5 @@
+services:
+  ros1ros2:
+    image: ros1ros2
+    build: 
+      dockerfile: ros1ros2.Dockerfile

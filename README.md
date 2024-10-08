@@ -36,19 +36,7 @@ docker compose run ros1ros2
    docker cp <file-to-convert>.bag <container-id>:/
    ```
 
-   b. Get ros1 running
-
-   ```
-   # docker terminal A (ROS1)
-
-   # In a separate terminal connect to the docker container
-   docker exec -it <container-id> bash
-
-   source /opt/ros/noetic/setup.bash
-   roscore
-   ```
-
-   c. Run the velodyne to pointcloud node
+   b. Run the velodyne to pointcloud node
 
    ```
    # docker terminal B (ROS1)
@@ -60,7 +48,7 @@ docker compose run ros1ros2
    rosrun nodelet nodelet standalone velodyne_pointcloud/TransformNodelet _model:="32E" _calibration:="/opt/ros/noetic/share/velodyne_pointcloud/params/32db.yaml" _min_range:=0.0
    ```
 
-   d. Record
+   c. Record
 
    ```
    # docker terminal C (ROS1)
@@ -72,7 +60,7 @@ docker compose run ros1ros2
    rosbag record -a
    ```
 
-   e. Play the file to be converted
+   d. Play the file to be converted
 
    ```
    # docker terminal D (ROS1)
@@ -86,19 +74,7 @@ docker compose run ros1ros2
 
 3. Convert .bag with ROS1 message types to .mcap with ROS2 message types
 
-   a. Get ros1 running
-
-   ```
-   # docker terminal A (ROS1)
-
-   # In a separate terminal connect to the docker container
-   docker exec -it <container-id> bash
-
-   source /opt/ros/noetic/setup.bash
-   roscore
-   ```
-
-   b. Run ros1 to ros2 bridge
+   a. Run ros1 to ros2 bridge
 
    ```
    # docker terminal B (ROS1 & ROS2)
@@ -111,7 +87,7 @@ docker compose run ros1ros2
    ros2 run ros1_bridge dynamic_bridge --bridge-all-topics
    ```
 
-   c. Record (this will produce the mcap file)
+   b. Record (this will produce the mcap file)
 
    ```
    # docker terminal C (ROS2)
@@ -123,7 +99,7 @@ docker compose run ros1ros2
    ros2 bag record -s mcap --all
    ```
 
-   d. Play file to be converted (use the file produced from 2.d. above)
+   c. Play file to be converted (use the file produced from 2.c. above)
 
    ```
    # docker terminal D (ROS1)

@@ -3,3 +3,5 @@ services:
     image: ros1ros2
     build: 
       dockerfile: ros1ros2.Dockerfile
+    command: bash -c "source /opt/ros/noetic/setup.bash 
+      && roscore"
